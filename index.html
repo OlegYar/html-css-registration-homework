@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignIn / SignUp</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="wrapper">
-        <nav>
-            <h1>SIGN UP</h1>
+        <input type="radio" name="tab" id="radio-signin" checked>
+        <input type="radio" name="tab" id="radio-signup">
+        <nav class="header">
+            <label for="radio-signin" class="header__tab header__tab_signin">sign in</label>
+            <label for="radio-signup" class="header__tab header__tab_signup">sign up</label>
         </nav>
-        <form class="form-signup" name="signup" action="https://reqres.in/api/register" method="POST">
-            <input type="tel" placeholder="Mobile phone" name="mobile phone" required>
-            <input type="email" placeholder="Email ID" name="email id" required>
-            <input type="password" placeholder="Password" name="password" required>
-            <label>
-                <input type="checkbox" name="terms" id="terms">
-                I agree to terms and coditions
-            </label>
-            <button class="form-signup__register">REGISTER</button>
+        <form class="form form_signin" action="https://reqres.in/api/login" method="POST">
+            <input class="form_signin__email-field form-field" type="email" placeholder="Email" name="email" required>
+            <input class="form_signin__pasword-field form-field" type="password" placeholder="Password" name="password" required>
+            <input class="form-checkbox" name="Kmli" type="checkbox" id="keeping">
+            <label class="form-checkbox-label" for="keeping">Keep me logged In</label>
+            <button class="form-submit">login</button>
+            <a class="form-link" href="#">Forgot password?</a>
+        </form>
+        <form class="form form_signup" action="https://reqres.in/api/register" method="POST">
+            <input class="form_signup__tel-field form-field" type="tel" placeholder="Mobile phone" name="mobile phone" required>
+            <input class="form_signup__email-field form-field" type="email" placeholder="Email ID" name="email id" required>
+            <input class="form_signup__password-field form-field" type="password" placeholder="Password" name="password" required>
+            <input class="form-checkbox" name="AcceptTerms" type="checkbox" id="terms" required>
+            <label class="form_signup__checkbox-label form-checkbox-label" for="terms">I agree to terms and coditions</label>
+            <button class="form_signup__submit form-submit">register</button>
         </form>
     </div>
-
 </body>
 </html>
